@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: 20
       - name: Validate all skills against the Agent Skills spec
-        run: pnpm dlx @zakelfassi/skdd validate packs --strict
+        run: pnpm dlx @zakelfassi/skdd validate packs incoming --strict
 
   safety-lint:
     name: safety-lint (deny patterns)
@@ -31,7 +31,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Scan skills for deny-listed patterns
         id: lint
-        run: node scripts/safety-lint.mjs packs
+        run: node scripts/safety-lint.mjs packs incoming
         continue-on-error: true
       - name: Enforce (bypassed only by the security-reviewed label)
         if: steps.lint.outcome == 'failure'
