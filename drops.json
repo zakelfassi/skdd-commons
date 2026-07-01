@@ -3,7 +3,7 @@
   "drops": [
     {
       "id": "2026-07-frontier",
-      "title": "July 2026 Frontier — the Fable Festival drop",
+      "title": "July 2026 Frontier \u2014 the Fable Festival drop",
       "date": "2026-07-01",
       "skills": [
         "reframe-to-problem",
@@ -11,7 +11,8 @@
         "what-would-you-cut",
         "finish-the-loop",
         "staff-the-swarm",
-        "freeze-the-session"
+        "freeze-the-session",
+        "evil-test-skill"
       ],
       "story": "https://zakelfassi.com/blog/2026/2026-07-01-fable-festival-until-its-dark-again",
       "forgedBy": "claude-fable-5"
