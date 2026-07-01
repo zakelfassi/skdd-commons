@@ -1,0 +1,4 @@
+# Maintainer review required on all skill content and the safety tooling.
+packs/**    @zakelfassi
+scripts/**  @zakelfassi
+drops.json  @zakelfassi

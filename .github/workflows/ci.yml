@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, synchronize, reopened, labeled, unlabeled]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: validate (skdd --strict)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Validate all skills against the Agent Skills spec
+        run: pnpm dlx @zakelfassi/skdd validate packs --strict
+
+  safety-lint:
+    name: safety-lint (deny patterns)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Scan skills for deny-listed patterns
+        id: lint
+        run: node scripts/safety-lint.mjs packs
+        continue-on-error: true
+      - name: Enforce (bypassed only by the security-reviewed label)
+        if: steps.lint.outcome == 'failure'
+        env:
+          REVIEWED: ${{ github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'security-reviewed') }}
+        run: |
+          if [ "$REVIEWED" = "true" ]; then
+            echo "Deny-pattern hits present, but the PR carries the 'security-reviewed' label — passing."
+          else
+            echo "Deny-pattern hits found and no 'security-reviewed' label on this PR."
+            echo "A maintainer must review the hits above and apply the label to unblock merge."
+            exit 1
+          fi
+
+  manifest-check:
+    name: manifest-check (drops.json ↔ packs/)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assert drops.json and packs/ agree
+        run: node scripts/manifest-check.mjs

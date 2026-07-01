@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "drops": [
+    {
+      "id": "2026-07-frontier",
+      "title": "July 2026 Frontier — the Fable Festival drop",
+      "date": "2026-07-01",
+      "skills": [
+        "reframe-to-problem",
+        "attack-the-plan",
+        "what-would-you-cut",
+        "finish-the-loop",
+        "staff-the-swarm",
+        "freeze-the-session"
+      ],
+      "story": "https://zakelfassi.com/blog/2026/2026-07-01-fable-festival-until-its-dark-again",
+      "forgedBy": "claude-fable-5"
+    }
+  ]
+}

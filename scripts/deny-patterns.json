@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "comment": "Deny-pattern starter set for the Commons safety lint. Each pattern is a JS RegExp source + flags. A hit blocks merge until a maintainer applies the `security-reviewed` label — it is a review trigger, not an auto-reject. Extend via PR.",
+  "patterns": [
+    {
+      "id": "pipe-to-shell",
+      "description": "Download piped straight into a shell",
+      "regex": "\\b(?:curl|wget)\\b[^\\n]*\\|\\s*(?:sudo\\s+)?(?:sh|bash|zsh|dash)\\b",
+      "flags": "i"
+    },
+    {
+      "id": "base64-exec",
+      "description": "Base64 decode piped into an interpreter",
+      "regex": "base64\\s+(?:-d|-D|--decode)\\b[^\\n]*\\|\\s*(?:sh|bash|zsh|node|python3?|perl|ruby)\\b",
+      "flags": "i"
+    },
+    {
+      "id": "eval-decode",
+      "description": "eval of decoded/obfuscated content",
+      "regex": "eval\\s*\\(\\s*(?:atob|Buffer\\.from)\\s*\\(",
+      "flags": "i"
+    },
+    {
+      "id": "ssh-dir-write",
+      "description": "Write into ~/.ssh (authorized_keys, config, keys)",
+      "regex": "(?:>>?|\\btee\\b|\\bcp\\b|\\bmv\\b|writeFileSync?|open\\()[^\\n]*(?:~|\\$HOME|\\$\\{HOME\\})/\\.ssh/",
+      "flags": "i"
+    },
+    {
+      "id": "shell-rc-write",
+      "description": "Append/write to shell rc or profile files",
+      "regex": "(?:>>?|\\btee\\b)\\s*[^\\n]*(?:\\.bashrc|\\.zshrc|\\.zprofile|\\.bash_profile|\\.profile)\\b",
+      "flags": "i"
+    },
+    {
+      "id": "crontab-write",
+      "description": "Crontab installation or edit",
+      "regex": "\\bcrontab\\b\\s*(?:-e\\b|[^\\n]*<|\\s+/)|/etc/cron\\.",
+      "flags": "i"
+    },
+    {
+      "id": "raw-ip-url",
+      "description": "URL pointing at a raw IP address (loopback exempt)",
+      "regex": "https?://(?!127\\.0\\.0\\.1|0\\.0\\.0\\.0)\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+      "flags": ""
+    },
+    {
+      "id": "non-https-url",
+      "description": "Plain-HTTP URL (localhost exempt)",
+      "regex": "\\bhttp://(?!localhost|127\\.0\\.0\\.1|0\\.0\\.0\\.0)",
+      "flags": "i"
+    },
+    {
+      "id": "credential-read",
+      "description": "Read of credential/secret files",
+      "regex": "(?:\\bcat\\b|\\bless\\b|\\bhead\\b|\\btail\\b|\\bcp\\b|\\bscp\\b|readFileSync?|open\\()[^\\n]*(?:\\.env\\b|(?:~|\\$HOME)/\\.aws\\b|id_(?:rsa|ed25519)\\b|\\.netrc\\b|\\.npmrc\\b|keychain|Keychains|credentials\\.json)",
+      "flags": "i"
+    },
+    {
+      "id": "security-bypass-cmd",
+      "description": "Disabling macOS/host security controls",
+      "regex": "\\b(?:spctl\\s+--master-disable|csrutil\\s+disable|defaults\\s+write[^\\n]*GateKeeper)\\b",
+      "flags": "i"
+    },
+    {
+      "id": "instruction-override",
+      "description": "Prompt-injection instruction-override phrasing",
+      "regex": "\\b(?:ignore|disregard|forget|override)\\b[^\\n.]{0,40}\\b(?:previous|prior|above|earlier|system|all)\\b[^\\n.]{0,40}\\b(?:instructions?|prompts?|rules|directives)\\b",
+      "flags": "i"
+    },
+    {
+      "id": "exfil-hint",
+      "description": "Sending local secrets to an external endpoint",
+      "regex": "(?:curl|wget|fetch|axios|requests?\\.(?:post|get))\\b[^\\n]*(?:\\$\\{?(?:API_KEY|TOKEN|SECRET|PASSWORD|AWS_[A-Z_]+)\\}?|\\.env\\b)",
+      "flags": "i"
+    }
+  ]
+}
