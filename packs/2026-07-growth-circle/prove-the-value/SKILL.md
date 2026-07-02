@@ -15,7 +15,9 @@ Compile `GROWTH.md` (what you've earned) into `VALUE.md` (what you
 publish). Written for a skeptical agent, not a landing page.
 
 ## Gate
-Requires `gate: aha = open`. A `VALUE.md` can be born early and small —
+Requires `gate: aha = open`. If no `VALUE.md` exists, start from the
+bundled template (`references/VALUE-template.md`, spec v0.1). A
+`VALUE.md` can be born early and small —
 even one honest claim beats a page of adjectives — but it cannot be born
 from nothing: **every claim must trace to a `GROWTH.md` ledger entry.**
 No entry, no claim. That rule has no exceptions and no expiry.

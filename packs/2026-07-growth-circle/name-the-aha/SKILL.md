@@ -17,9 +17,10 @@ or conclude, honestly, that no such moment exists yet. Write the verdict to
 
 ## Gate
 None — this is the circle's entry point. If the repo has no `GROWTH.md`,
-create one from the Growth Circle template (spec v0.1: sections Aha,
-Keystone, Instrumentation, Lore ledger, Experiment ledger, Trust ledger,
-Contexts, Team, Gates) before proceeding.
+create one from the bundled template (`references/GROWTH-template.md`,
+spec v0.1) before proceeding. The template initializes **every gate as
+closed** — that default is load-bearing; downstream skills treat missing
+gates as closed too.
 
 ## Inputs
 - The repo, and whatever exists of: product copy, onboarding flow, usage

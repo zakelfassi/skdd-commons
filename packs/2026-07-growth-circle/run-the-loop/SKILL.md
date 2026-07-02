@@ -16,14 +16,19 @@ was written so an agent can operate it — and so nobody, agent or human, can
 quietly cheat it.
 
 ## Gate
-Requires `gate: loop = open` in `GROWTH.md` — i.e., aha, keystone, and
-instrumented all open. If closed, name the unmet gate and route there.
-Two standing sub-gates apply *inside* the loop:
+Requires `gate: aha`, `gate: keystone`, and `gate: instrumented` all open
+in `GROWTH.md`. `gate: loop` is the *derived* summary of those three: if
+all three are open and `loop` still reads closed (or is missing), set
+`gate: loop = open` yourself and proceed; if any is closed, name it and
+route there. **Missing gate lines are closed** — never treat an absent
+gate as permission. Two standing sub-gates apply *inside* the loop:
 
-- **Virality gate:** while `gate: virality = closed`, any proposal whose
-  mechanism is get-users-to-get-users goes to `### Parked: virality` —
-  not debated, not refined, parked. The gate opens only after activation
-  and retention experiments run green two consecutive cycles.
+- **Virality gate:** unless `GROWTH.md` explicitly says
+  `gate: virality = open`, any proposal whose mechanism is
+  get-users-to-get-users goes to `### Parked: virality` — not debated,
+  not refined, parked (absent or malformed line = closed). The gate
+  opens only after activation and retention experiments run green two
+  consecutive cycles.
 - **Alienation test:** every experiment answers, pre-launch: *would this
   alienate the user if they fully understood what it does?* Yes or unsure
   → killed or escalated to a human. Non-delegable to agents.
