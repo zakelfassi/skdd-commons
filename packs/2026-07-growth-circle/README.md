@@ -1,6 +1,6 @@
 # 2026-07-growth-circle — July 2026 Growth Circle
 
-**The growth-team-in-a-box drop.** Eight gated skills forged by Claude Fable 5 on July 2, 2026 — the executable implementation of the [Growth Circle protocol](https://github.com/zakelfassi/growth-circle): an open two-file schema (`GROWTH.md` + `VALUE.md`) for growth discipline in the agentic era, inspired by the early growth-team canon, fact-checked against a decade-plus of hindsight, and extended for a world where discovery is agent-mediated.
+**The growth-team-in-a-box drop.** Ten gated skills forged by Claude Fable 5 on July 2, 2026 — the executable implementation of the [Growth Circle protocol](https://github.com/zakelfassi/growth-circle): an open two-file schema (`GROWTH.md` + `VALUE.md`) for growth discipline in the agentic era, inspired by the early growth-team canon, fact-checked against a decade-plus of hindsight, and extended for a world where discovery is agent-mediated.
 
 The pack's stance in one line: **you cannot publish what you have not earned.** Inward, an evidence ledger (`GROWTH.md`); outward, verifiable claims (`VALUE.md`); in between, skills that refuse to run out of order.
 
@@ -16,6 +16,9 @@ name-the-aha ──► find-the-keystone ──► instrument-the-truth ──�
 prove-the-value   ◄── compiles GROWTH.md → VALUE.md   green ≥ 2 consecutive cycles
 reset-for-context ◄── any skill, when a context shifts
 hire-the-circle   ◄── standalone (team & agent staffing)
+
+wind-the-clock         ◄── makes it recur: schedules the checks in the harness's scheduler
+forge-the-local-circle ◄── makes it stick: forges project-specialized locals via SkDD
 ```
 
 Two rules are enforced as refusals, never advice: the **virality gate** (viral mechanics are parked, not debated, until earned) and the **alienation test** (anything a fully-informed user would resent is auto-killed — and never delegated to agents).
@@ -32,6 +35,8 @@ Two rules are enforced as refusals, never advice: the **virality gate** (viral m
 | [reset-for-context](./reset-for-context/) | 4 — contexts | The 99/1 reset protocol with native-informant provenance — markets, platforms, agent channels |
 | [prove-the-value](./prove-the-value/) | outward | Compile earned claims into a public, attestation-graded VALUE.md for agent-mediated discovery |
 | [hire-the-circle](./hire-the-circle/) | 5 — team | Values → scorecards → interview kits, plus the human/agent ring map with two non-delegables |
+| [wind-the-clock](./wind-the-clock/) | self-running | Schedule the circle's recurring checks (loop cadence, sunsets, probes, expiries) in whatever scheduler the harness offers; ledger the clock in `## Cadence` |
+| [forge-the-local-circle](./forge-the-local-circle/) | self-running | Forge project-specialized adaptations via SkDD — locals that know the keystone and stack; derivatives may specialize everything except the refusals |
 
 ## Install
 

@@ -28,7 +28,9 @@
         "run-the-loop",
         "reset-for-context",
         "prove-the-value",
-        "hire-the-circle"
+        "hire-the-circle",
+        "wind-the-clock",
+        "forge-the-local-circle"
       ],
       "story": "https://github.com/zakelfassi/growth-circle",
       "forgedBy": "claude-fable-5"
