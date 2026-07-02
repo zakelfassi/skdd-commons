@@ -15,6 +15,25 @@
       ],
       "story": "https://zakelfassi.com/blog/2026/2026-07-01-fable-festival-until-its-dark-again",
       "forgedBy": "claude-fable-5"
+    },
+    {
+      "id": "2026-07-growth-circle",
+      "title": "July 2026 Growth Circle — the growth-team-in-a-box drop",
+      "date": "2026-07-02",
+      "skills": [
+        "name-the-aha",
+        "find-the-keystone",
+        "instrument-the-truth",
+        "invalidate-the-lore",
+        "run-the-loop",
+        "reset-for-context",
+        "prove-the-value",
+        "hire-the-circle",
+        "wind-the-clock",
+        "forge-the-local-circle"
+      ],
+      "story": "https://github.com/zakelfassi/growth-circle",
+      "forgedBy": "claude-fable-5"
     }
   ]
 }

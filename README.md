@@ -11,6 +11,7 @@ Skills are released as curated, dated **drops** — themed sets that travel toge
 | Drop | Date | Skills | Story |
 |------|------|--------|-------|
 | [`2026-07-frontier`](./packs/2026-07-frontier/) — July 2026 Frontier, the Fable Festival drop | 2026-07-01 | 6 | [The Fable Festival (Until It's Dark Again)](https://zakelfassi.com/blog/2026/2026-07-01-fable-festival-until-its-dark-again) |
+| [`2026-07-growth-circle`](./packs/2026-07-growth-circle/) — July 2026 Growth Circle, the growth-team-in-a-box drop | 2026-07-02 | 10 | [The Growth Circle protocol](https://github.com/zakelfassi/growth-circle) |
 
 ## Install
 
